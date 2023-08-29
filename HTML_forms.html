@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>HTML Forms</title>
+    </head>
+    <body bgcolor="yellow">
+        <h1 style="color:blue">Fruit Survey</h1> 
+        <form method="post" action="process.php" target="_blank">
+            <pre>
+            Name:   <input type="text" name="uname"/>
+            <br>
+            Email:  <input type="text" name="uemail"/>
+            <br>
+            Address:<input type="textarea" row="3" name="uname"/>
+            <br><br>
+            Your favourite fruit:
+            <br>
+            <input type="checkbox" name="uf" value="Apple"/>Apple            
+            <br>
+            <input type="checkbox" name="uf" value="Banana"/>Banana            
+            <br>
+            <input type="checkbox" name="uf" value="Grapes"/>Grapes            
+            <br><br>
+            No. of fruits consumed:
+            <br>
+            <input type="radio" name="unum" value="1"/>1
+            <br>
+            <input type="radio" name="unum" value="2"/>2 
+            <br>
+            <input type="radio" name="unum" value="3"/>3 
+            <br> <br>
+            How do you consume your fruit ?
+            
+            <select name="ucon">
+                <option value="milkshake"/>Milkshake</option>
+                <option value="cutfruit"/>Cutfruit</option>
+                <option value="salad"/>Salad</option>
+            </select>
+            
+
+            <input type="button" value="Click me"/>
+            <input type="submit" value="Survey"/>
+            <input type="reset" value="Clear Form"/>
+
+            </pre>
+        </form>
+    </body>
+</html>
