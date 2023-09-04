@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            // Javascript Objects
+            //Method 1 : Object literals 
+
+            let item={name:"Reebok" , price:"Rs.2000", av_qty:10};
+            document.write(item.name+" "+item.price+" "+item.av_qty+"<br>");
+
+            item.show=function(){
+                document.write(item.name+" "+item.price+" "+item.av_qty+"<br>")
+            };
+            item.show()
+
+            // Method 2 : Object constructions
+
+            function item(name,price,av_qty)
+            {
+                this.name=name;
+                this.price=price;
+                this.av_qty=av_qty;
+                this.show = function(){
+                    ocument.write(this.name+" "+this.price+" "+this.av_qty+" ")
+
+                }
+            }
+            let item1=new item("Reebok","Rs.2000",10);
+            item1.show()
+
+        </script>
+    </head>
+</html>
