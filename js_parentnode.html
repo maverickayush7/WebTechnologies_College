@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <p>Example list</p>
+        <ul>
+            <li id="myli">Coffee</li>
+            <li>TEA</li>
+            <li>Milk</li>
+        </ul>
+        <p>Click the button to get the node name of the parent</p>
+
+        <button onclick="myfunction()">CLICK ME</button>
+        <p id="demo"></p>
+        <script>
+            function myfunction()
+            {
+                let name=document.getElementById("myli").parentNode;
+                document.getElementById("demo").innerHTML = name;
+            }
+        </script>
+    </body>
+</html>
