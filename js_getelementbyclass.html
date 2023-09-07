@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            div{
+                border: 1px solid black;
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The document Object model manipulations</h1>
+        <h2>The getElementByClassname() Method</h2>
+
+        <p>Change the background color of the first element with the classsname</p>
+
+        <div class="example">
+            <p>This is a paragraph</p>
+        </div>
+
+        <div class="example color">
+            <p>This is a paragraph</p>
+        </div>
+
+        <script>
+            const collection = document.getElementsByClassName("example color");
+            for(let i =0;i<collection.length;i++){
+                collection[i].style.backgroundColor = "red";   
+            }
+        </script>
+    </body>
+</html>
