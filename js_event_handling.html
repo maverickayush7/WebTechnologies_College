@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            #mydiv1,#mydiv2{
+                background-color: coral;
+                padding: 50px;
+            }
+
+            #myP1 ,#myP2
+            {
+                background-color: white;
+                font-size: 20px;
+                border: 1px solid;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2> Javascript addEventListeners</h2>
+        <div id="mydiv1">
+            <h2>Bubbling</h2>
+            <p id="myP1">Click ME!</p>
+        </div><br>
+
+        <div id="mydiv2">
+            <h2>Capturing</h2>
+            <p id="myP2">Click ME!</p>
+        </div><br>
+
+    </body>
+
+
+    <script>
+        document.getElementById("myP1").addEventListener("click",function(){
+            alert("You clicked the white element");
+            console.log(event.eventPhase=" "+event.target.id+" "+event.currentTarget.id)
+        },false);
+
+        document.getElementById("mydiv1").addEventListener("click",function(){
+            alert("You clicked the orange element");
+            console.log(event.eventPhase=" "+event.target.id+" "+event.currentTarget.id)
+        },false);
+
+        document.getElementById("myP2").addEventListener("click",function(){
+            alert("You clicked the white element");
+            console.log(event.eventPhase=" "+event.target.id+" "+event.currentTarget.id)
+        },true);
+
+        document.getElementById("mydiv2").addEventListener("click",function(){
+            alert("You clicked the orange element");
+            console.log(event.eventPhase=" "+event.target.id+" "+event.currentTarget.id)
+        },false);
+    </script>
+</html>
