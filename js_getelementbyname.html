@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h1>The document object </h1>
+        <h2>The document.getElementsByName()</h2>
+
+        Cats:
+        <input name="animal" type="checkbox" value="Cats">
+
+        Bats:
+        <input name="animal" type="checkbox" value="Bats">
+
+        <p> Number of elements with name = "animal" is:</p>
+        <p id="demo"></p>
+
+        <script>
+            let num=document.getElementsByName("animal").length;
+            document.getElementById("demo").innerHTML = num;
+        </script>
+    </body>
+</html>
