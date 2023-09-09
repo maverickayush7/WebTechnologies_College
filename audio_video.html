@@ -1,0 +1,53 @@
+<!-- <html>
+    <title>AUDIO</title>
+    <audio controls loop>
+        <source src = "D:\PES Academics\4 Web Technologies\Crazy frog bgm.mp3" type="audio/mp3">
+    </audio>
+</html> -->
+
+
+
+<!-- <html>
+    <head>
+        <title>VIDEO</title>
+    </head>
+        <video controls loops height="400" width="300">
+            <source src="D:/PES Academics/4 Web Technologies/Candy Song.mp4" type="video/mp4">
+        </video>
+
+</html> -->
+
+
+<script>
+    var gvalue=1;
+    function abc()
+    {
+        var progressExample = document.getElementById('progress-javascript-exam')
+            setInterval(function()
+            {
+                if(gvalue<100)
+                {
+                    gvalue++;
+                    progressExample.value=gvalue;
+                }
+                abc();
+            },1000);
+    }
+</script>
+
+<progress id="progress-javascript-example" min="1" max="100"></progress>
+
+<html>
+    <h1>Audio and Video Element</h1>
+    <p>Click on the play button</p>
+    
+    <audio controls loop>
+        <source src = "D:\PES Academics\4 Web Technologies\Crazy frog bgm.mp3" type="audio/mp3">
+    </audio>
+        
+    <video controls loops height="400" width="300">
+        <source src="D:/PES Academics/4 Web Technologies/Candy Song.mp4" type="video/mp4">
+    </video>
+
+</html>
+
