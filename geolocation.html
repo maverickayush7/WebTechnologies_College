@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>GEOLOCATION</title>
+        <script type = "text/javascript">
+            function getpos(){
+                navigator.geolocation.getCurrentPosition(show,error);
+            }
+            function show(position){
+                ps=position;
+                console.log("Current Position:"+position.coords.latitude+" "+position.coords.longitude);
+            }
+            function error(error){
+                e=error;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="getpos()">Get Current Position</button>
+    </body>
+
+</html>
