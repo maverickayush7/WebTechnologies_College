@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- web worker creates a seperate thread hence doesnt slow performace of main server -->
+<html>
+    <head>
+        <title>WEB WORKERS</title>
+        <meta charset="uft-8">
+    </head>
+
+    <body>
+        <p>Count numbers: <output id="result"></output></p>
+        <button onclick="startWorker()">Start worker</button>
+        <button onclick="stopWorker()">Stop worker</button>
+
+        <p><strong>Note:</strong>Internet Explorer 10 and above</p>
+    </body>
+
+    <script>
+            var w;
+
+            function startWorker()
+            {
+                if (typeof(Worker)!== "undefined") //if worker doesn't exist
+                {
+                    if (typeof(w) == "undefined") //if w doesnt exist
+                    {
+                        w = new Worker("demo.js"); //create new worker //linking to demo
+                        w.onmessage = function(event) 
+                        {
+                        document.getElementById("result").innerHTML = event.data;
+                        }
+                    }
+                    else
+                    {
+                        document.getElementById("result").innerHTML = "Sorry, browser doesn't support";
+                    }
+                }
+            }
+            function stopWorker()
+            {
+                w.terminate();
+                w = undefined;
+            }
+    </script>
+
+</html>
