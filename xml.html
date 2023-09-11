@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>XML (Extensible Markup Language)</title>
+    </head>
+    <body>
+        <p id="demo1"></p>
+        <script>
+            // create XML book data
+
+            var text = '<bookstore>'+
+                    '<book>'+
+                    '<title>Atomic Habits</title>' + 
+                    '<author>James Clear</author>'+
+                    '<year>2005</year>'+
+                    '</book>'+
+                    '</bookstore>';
+            
+            // 1) dom parser method provides the ability to pass or convert xml source code from a string to a dom document.
+            // 2) 'passfromstring' method of dom parser passes a string containing an HTML document written in the XML document. 
+            // 3) Converting the dom tree back to XML source code is preformed using XMLSerializer.
+
+            // To get hold of XML DOM
+            var parser=new DOMParser();    //new instance of domparser
+
+            // To query DOM
+            var xmlDOM=parser.parseFromString(text,"text/xml");
+
+            // To retrive the child title
+            var title=xmlDOM.getElementsByTagName("title")[0];
+            
+            //Modify the title 
+            title.childNodes[0].nodeValue +="-Modified";
+            document.getElementById("demo1").innerText=title.childNodes[0].nodeValue;
+
+            // Create a new XMLSerializer object
+            var oSerializer = new XMLSerializer();
+
+            // Convert /serialize back to string
+            var sXML = oSerializer.serializeToString(xmlDOM);
+            console.log(sXML);
+            
+            </script>
+    </body>
+</html>
