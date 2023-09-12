@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide("slow",function(){alert("Content is hidden now")})
+            }
+            )
+            $("#show").click(function(){
+                $("p").show("slow",function(){alert("Content is visible now")})
+            }
+            )
+            $("#toggle").click(function(){
+                $("p").toggle(500,function(){alert("Toggle Successfully Done")})
+            }
+            )
+        }
+        )
+    </script>
+
+<body>
+    <p> Hide this paragraph </p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+</body>
+
+
+</html>
