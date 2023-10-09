@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      class Helloworld extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { name: "ayush", PhNo: 7376110, address: "Lucknow" };
+        }
+
+        componentDidMount() {
+          console.log("Did Mount");
+        }
+
+        componentDidUpdate(prevProps, prevState) {
+          console.log("Did Update");
+        }
+
+        updateState = () => {
+          console.log("Update");
+          this.setState({ name: "Ayush Kumar" ,address: "Bangalore"});
+        }
+
+        fundelete = () => {
+          console.log("delete React component");
+          ReactDOM.unmountComponentAtNode(document.getElementById("container"));
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>Hello </h1>
+              <p>Name: {this.state.name}</p>
+              <p>Phone Number: {this.state.PhNo}</p>
+              <p>Address: {this.state.address}</p>
+              <button onClick={this.updateState}>Update State</button>
+              <button onClick={this.fundelete}>Delete Component</button>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Helloworld />, document.querySelector("#container"));
+    </script>
+  </body>
+</html>
