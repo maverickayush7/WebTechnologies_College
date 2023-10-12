@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>React Refs & keys</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class QuantityIncrementer extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { quantity: 0 };
+          this.QuantityRef = React.createRef();
+        }
+
+        incrementQuantity = () => {
+          this.setState({ quantity: this.state.quantity + 1 }, () => {
+            this.QuantityRef.current.value = this.state.quantity;
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <p>
+                <label>Enter Quantity</label>
+                <input type="text" ref={this.QuantityRef} />
+                <button onClick={this.incrementQuantity}>+</button>
+              </p>
+              <p>Quantity: {this.state.quantity}</p>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<QuantityIncrementer />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
